@@ -11,12 +11,12 @@ import time
 train_dataset = dsets.MNIST(root='./MNIST_data/',
                             train=True,
                             transform=transforms.ToTensor(),
-           download = False)#数据集存在  为False
+           download = True)#数据集存在  为False
 
 val_dataset = dsets.MNIST(root='./MNIST_data/',
                            train=False,
                            transform=transforms.ToTensor(),
-                           download=False)
+                           download=True)
 
 #载入数据集 训练的时候选择训练数据集，验证的时候选择验证数据集
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=100)#一次传送的数据集个数100个
